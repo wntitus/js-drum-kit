@@ -59,7 +59,14 @@
 
 <script>
   window.addEventListener('keydown', (event) => {
-    const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`)
+    const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+
+    // stop execution if no audio element found
+    if (!audio) {
+      return;
+    }
+
+    audio.play();
   });
 
 </script>
